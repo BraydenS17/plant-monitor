@@ -10,6 +10,12 @@ Two-ESP32 plant monitoring system:
   (no sensors attached). Receives the packets, keeps 48 h of history in RAM,
   and serves a phone-friendly dashboard with live values, history charts and
   a data table.
+- **`plant_test/plant_test.ino`** — bench-test sketch for the sensor board:
+  no sleep, no radio, just continuous 1 s sensor reads on the OLED/Serial,
+  including the raw soil ADC value for calibrating `DRY_VALUE`/`WET_VALUE`.
+- **`soil_test/soil_test.ino`** — soil sensor only (nothing else wired):
+  fast Serial readout of raw ADC + percentage with session min/max tracking
+  for finding your `DRY_VALUE`/`WET_VALUE` calibration numbers.
 
 ## Flashing
 
